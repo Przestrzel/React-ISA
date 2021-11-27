@@ -1,3 +1,5 @@
+@import './utils/variables.scss';
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -9,4 +11,5 @@ html {
 body {
   padding: 0;
   margin: 0;
+  background-color: darken($light-grey, 5);
 }

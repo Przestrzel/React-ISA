@@ -6,7 +6,6 @@ const Header = () => {
     <nav>
       <ul className='navbar'>
         <li className='navbar-element'>Team manager</li>
-        <li className='navbar-element'>All teams</li>
       </ul>
     </nav>
   );
