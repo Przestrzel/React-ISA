@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
 
 import Header from './components/header/Header';
-import Teams from './components/teams/Teams';
+import Teams from './components/teams/TeamsComponent';
 
 function App() {
   return (
