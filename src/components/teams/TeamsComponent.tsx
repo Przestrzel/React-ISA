@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import { teamsService } from '../../services/teams.service';
-import { Team } from '../../constants/teamsType';
+import { Teams } from '../../constants/teamsType';
 
-const Teams = () => {
-  const [teams, setTeams] = useState<Team[] | null>(null);
+const TeamsComponent = () => {
+  const [teams, setTeams] = useState<Teams[] | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -22,4 +22,4 @@ const Teams = () => {
   );
 };
 
-export default Teams;
+export default TeamsComponent;

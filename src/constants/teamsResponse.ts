@@ -1,4 +1,4 @@
-import { Team } from './teamsType';
+import { Team, Teams } from './teamsType';
 
 export type TeamResponse = {
   config: unknown;
@@ -10,7 +10,7 @@ export type TeamResponse = {
 
 export type TeamsResponse = {
   config: unknown;
-  data: { teams: Team[] };
+  data: { teams: Teams[] };
   headers: unknown;
   status: number;
   statusText: string;
