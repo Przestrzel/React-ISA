@@ -1,9 +1,14 @@
 import React from 'react';
 import './App.scss';
 
+import Header from './components/header/Header';
+
 function App() {
-  console.log(process.env.REACT_APP_API_URL);
-  return <></>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
