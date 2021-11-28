@@ -8,6 +8,9 @@ const getTeams = (): Promise<TeamsResponse> =>
 const getTeam = (teamName: string): Promise<TeamResponse> =>
   axios.get(config.endpoints.teams.teamName.replace(':teamName', teamName));
 
+const deleteTeam = (teamName: string): unknown =>
+  axios.delete(config.endpoints.teams.teamName.replace(':teamName', teamName));
+
 const updateTeam = (teamName: string, data: { budget: number }): unknown =>
   axios.put(
     config.endpoints.teams.teamName.replace(':teamName', teamName),
@@ -18,4 +21,5 @@ export const teamsService = {
   getTeams,
   getTeam,
   updateTeam,
+  deleteTeam,
 };
