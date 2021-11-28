@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 
 import { teamsService } from '../../services/teams.service';
 import { Teams } from '../../constants/teamsType';
+import NewTeamForm from './NewTeamForm';
 import DeleteSVG from '../../images/delete.svg';
 
 import './TeamsComponent.scss';
@@ -26,8 +27,9 @@ const TeamsComponent = () => {
   };
 
   return (
-    <div>
-      <div className='team-manager'>Teams to manage</div>
+    <div className='team-container'>
+      <div className='team-manager'>Teams</div>
+      <NewTeamForm />
       {teams.length
         ? teams.map(team => (
             <div key={team.name}>

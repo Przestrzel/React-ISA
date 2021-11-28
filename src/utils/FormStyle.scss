@@ -38,7 +38,20 @@ form {
     outline: none;
     border: 1px solid $primary-color;
     cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: darken($light-grey, 5);
+    }
   }
+}
+
+.form-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: $light-grey-3;
+  font-weight: 500;
 }
 
 .delete-logo {

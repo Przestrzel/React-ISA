@@ -8,6 +8,9 @@ const getTeams = (): Promise<TeamsResponse> =>
 const getTeam = (teamName: string): Promise<TeamResponse> =>
   axios.get(config.endpoints.teams.teamName.replace(':teamName', teamName));
 
+const addTeam = (data: any): unknown =>
+  axios.post(config.endpoints.teams.teams, data);
+
 const deleteTeam = (teamName: string): unknown =>
   axios.delete(config.endpoints.teams.teamName.replace(':teamName', teamName));
 
@@ -22,4 +25,5 @@ export const teamsService = {
   getTeam,
   updateTeam,
   deleteTeam,
+  addTeam,
 };
