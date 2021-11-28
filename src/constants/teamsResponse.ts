@@ -2,7 +2,7 @@ import { Team, Teams } from './teamsType';
 
 export type TeamResponse = {
   config: unknown;
-  data: { team: Team };
+  data: Team;
   headers: unknown;
   status: number;
   statusText: string;

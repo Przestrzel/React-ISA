@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+form {
+  margin: 0 auto;
+  & .form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & div label {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+
+    & input {
+      height: 20px;
+      width: 267px;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      outline: none;
+      margin-bottom: 15px;
+      border-radius: 30px;
+      border: 1px solid $primary-color;
+    }
+  }
+}
+
+.form-submit {
+  width: 267px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  & button {
+    height: 40px;
+    width: 70px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+  }
+}
