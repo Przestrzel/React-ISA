@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 
 import { teamsService } from '../../services/teams.service';
 import { Teams } from '../../constants/teamsType';
-import NewTeamForm from './NewTeamForm';
+import NewTeamForm from './forms/NewTeamForm';
 import DeleteSVG from '../../images/delete.svg';
 
 import './TeamsComponent.scss';

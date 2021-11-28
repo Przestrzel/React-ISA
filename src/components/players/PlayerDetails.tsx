@@ -66,54 +66,63 @@ const PlayerDetails: React.FC<PlayerDetailsProps> = props => {
   let formContent = <p>Wait for it</p>;
   if (player) {
     formContent = (
-      <div>
+      <div className='single-form'>
         <form onSubmit={handleSubmit(onSubmitHandler)}>
-          <div className='form-input'>
-            <div>
-              <label>Full name</label>
+          <div className='form-row'>
+            <div className='form-input'>
+              <div>
+                <label>Full name</label>
+              </div>
+              <input {...register('fullName')} type='text'></input>
             </div>
-            <input {...register('fullName')} type='text'></input>
-          </div>
-          <div className='form-input'>
-            <div>
-              <label>Age</label>
+            <div className='form-input'>
+              <div>
+                <label>Age</label>
+              </div>
+              <input {...register('age')} type='number'></input>
             </div>
-            <input {...register('age')} type='number'></input>
           </div>
-          <div className='form-input'>
-            <div>
-              <label>Height</label>
+          <div className='form-row'>
+            <div className='form-input'>
+              <div>
+                <label>Height</label>
+              </div>
+              <input {...register('height')} type='text'></input>
             </div>
-            <input {...register('height')} type='text'></input>
-          </div>
-          <div className='form-input'>
-            <div>
-              <label>Weight</label>
+            <div className='form-input'>
+              <div>
+                <label>Weight</label>
+              </div>
+              <input {...register('weight')} type='text'></input>
             </div>
-            <input {...register('weight')} type='text'></input>
           </div>
-          <div className='form-input'>
-            <div>
-              <label>Position</label>
+          <div className='form-row'>
+            <div className='form-input'>
+              <div>
+                <label>Position</label>
+              </div>
+              <input {...register('position')} type='text'></input>
             </div>
-            <input {...register('position')} type='text'></input>
-          </div>
-          <div className='form-input'>
-            <div>
-              <label>Value</label>
+            <div className='form-input'>
+              <div>
+                <label>Value</label>
+              </div>
+              <input {...register('value')} type='number'></input>
             </div>
-            <input {...register('value')} type='number'></input>
           </div>
-          <div className='form-input'>
-            <div>
-              <label>Nationality</label>
+          <div className='form-row'>
+            <div className='form-input'>
+              <div>
+                <label>Nationality</label>
+              </div>
+              <input {...register('nationality')} type='text'></input>
             </div>
-            <input {...register('nationality')} type='text'></input>
           </div>
-
-          <div className='form-submit'>
-            <div></div>
-            <button type='submit'>Change</button>
+          <div className='form-row'>
+            <div className='form-submit'>
+              <div></div>
+              <button type='submit'>Change</button>
+            </div>
           </div>
         </form>
       </div>

@@ -14,6 +14,12 @@ const getPlayer = (teamName: string, id: string): Promise<PlayerResponse> =>
       .replace(':id', id)
   );
 
+const addPlayer = (teamName: string, data: any): unknown =>
+  axios.post(
+    config.endpoints.players.teamPlayers.replace(':teamName', teamName),
+    data
+  );
+
 const deletePlayer = (teamName: string, id: string): unknown =>
   axios.delete(
     config.endpoints.players.teamPlayerId
@@ -34,4 +40,5 @@ export const playersService = {
   getPlayer,
   updatePlayer,
   deletePlayer,
+  addPlayer,
 };

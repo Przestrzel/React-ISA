@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useHistory } from 'react-router';
 
-import { teamsService } from '../../services/teams.service';
+import { teamsService } from '../../../services/teams.service';
 
-import '../../utils/FormStyle.scss';
+import '../../../utils/FormStyle.scss';
 
 type TeamInputs = {
   name: string;
