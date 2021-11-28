@@ -39,8 +39,10 @@ const PlayerDetails: React.FC<PlayerDetailsProps> = props => {
   const teamName = props.match.params.teamName;
   const id = props.match.params.id;
 
-  const onSubmitHandler: SubmitHandler<PlayerInputs> = (data: PlayerInputs) => {
-    console.log(data);
+  const onSubmitHandler: SubmitHandler<PlayerInputs> = async (
+    data: PlayerInputs
+  ) => {
+    await playersService.updatePlayer(teamName, id, data);
   };
 
   useEffect(() => {
