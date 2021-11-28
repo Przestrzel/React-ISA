@@ -1,0 +1,52 @@
+@import '../../utils/variables.scss';
+
+.team-manager {
+  margin: 2rem 0;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: $light-grey-3;
+  font-weight: 500;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.team {
+  color: $light-grey-3;
+  margin: 1rem 20rem;
+  padding: 2rem 3rem;
+  border: 1px solid $primary-color;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem lighten($primary-color, 60);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  &:first-child {
+    margin-top: 2rem;
+  }
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &-description {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  &-name {
+    color: black;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 4rem lighten($primary-color, 60);
+    transition: all 0.2s ease-out;
+  }
+
+  &:hover:active {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 4rem lighten($primary-color, 55);
+  }
+}
