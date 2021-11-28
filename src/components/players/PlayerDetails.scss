@@ -1,0 +1,15 @@
+@import '../../utils/variables.scss';
+
+.player-details {
+  @include customBox;
+  &__name {
+    font-size: 2.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1rem 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $light-grey-3;
+    font-weight: 500;
+    color: $light-grey-3;
+  }
+}
