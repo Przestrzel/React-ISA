@@ -21,14 +21,14 @@ const TeamsComponent = () => {
       <div className='team-manager'>Teams to manage</div>
       {teams.length
         ? teams.map(team => (
-            <Link to={`team/${team.name}`} key={team.name}>
+            <Link to={`teams/${team.name}`} key={team.name}>
               <div key={team.name} className='team'>
                 <div className='team-description'>Team name:</div>
                 <div className='team-name'>{team.name}</div>
               </div>
             </Link>
           ))
-        : 'There are no teams'}
+        : 'There are no players'}
     </div>
   );
 };
