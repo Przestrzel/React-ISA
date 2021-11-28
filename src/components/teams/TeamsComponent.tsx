@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 import { teamsService } from '../../services/teams.service';
 import { Teams } from '../../constants/teamsType';
@@ -9,6 +10,7 @@ import './TeamsComponent.scss';
 
 const TeamsComponent = () => {
   const [teams, setTeams] = useState<Teams[]>([]);
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
@@ -20,6 +22,7 @@ const TeamsComponent = () => {
   const deleteTeam = async (name: string, event: React.FormEvent<{}>) => {
     event.preventDefault();
     await teamsService.deleteTeam(name);
+    history.go(0);
   };
 
   return (

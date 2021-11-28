@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+
 import { RouteComponentProps } from 'react-router-dom';
 import { Player } from '../../constants/playersType';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -36,6 +38,7 @@ const PlayerDetails: React.FC<PlayerDetailsProps> = props => {
       nationality: '',
     },
   });
+  const history = useHistory();
   const teamName = props.match.params.teamName;
   const id = props.match.params.id;
 
@@ -43,6 +46,7 @@ const PlayerDetails: React.FC<PlayerDetailsProps> = props => {
     data: PlayerInputs
   ) => {
     await playersService.updatePlayer(teamName, id, data);
+    history.go(0);
   };
 
   useEffect(() => {

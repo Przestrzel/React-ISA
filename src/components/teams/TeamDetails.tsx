@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, useHistory } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { teamsService } from '../../services/teams.service';
@@ -21,6 +21,7 @@ interface TeamDetailsProps extends RouteComponentProps<RouteParams> {}
 const TeamDetails: React.FC<TeamDetailsProps> = props => {
   const teamName = props.match.params.teamName;
   const [team, setTeam] = useState<Team>();
+  const history = useHistory();
 
   const { register, handleSubmit, setValue } = useForm<TeamInputs>({
     defaultValues: { budget: 0 },
@@ -38,6 +39,7 @@ const TeamDetails: React.FC<TeamDetailsProps> = props => {
     data: TeamInputs
   ) => {
     await teamsService.updateTeam(teamName, data);
+    history.go(0);
   };
 
   let formContent = <p>Wait for it</p>;
