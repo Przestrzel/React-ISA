@@ -10,7 +10,7 @@ export type PlayerResponse = {
 
 export type PlayersResponse = {
   config: unknown;
-  data: Player[];
+  data: { players: Player[] };
   headers: unknown;
   status: number;
   statusText: string;

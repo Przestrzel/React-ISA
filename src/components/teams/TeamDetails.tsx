@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { teamsService } from '../../services/teams.service';
 import { Team } from '../../constants/teamsType';
+import PlayersComponent from '../players/PlayersComponent';
 
 import './TeamDetails.scss';
 import '../../utils/FormStyle.scss';
@@ -20,6 +21,7 @@ interface TeamDetailsProps extends RouteComponentProps<RouteParams> {}
 const TeamDetails: React.FC<TeamDetailsProps> = props => {
   const teamName = props.match.params.teamName;
   const [team, setTeam] = useState<Team>();
+
   const { register, handleSubmit, setValue } = useForm<TeamInputs>({
     defaultValues: { budget: 0 },
   });
@@ -38,9 +40,9 @@ const TeamDetails: React.FC<TeamDetailsProps> = props => {
     await teamsService.updateTeam(teamName, data);
   };
 
-  let content = <p>Wait for it</p>;
+  let formContent = <p>Wait for it</p>;
   if (team) {
-    content = (
+    formContent = (
       <div>
         <form onSubmit={handleSubmit(onSubmitHandler)}>
           <div className='form-input'>
@@ -60,7 +62,8 @@ const TeamDetails: React.FC<TeamDetailsProps> = props => {
   return (
     <div className='team-details'>
       <div className='team-details__name'>{teamName}</div>
-      {content}
+      {formContent}
+      {team ? <PlayersComponent teamName={team.name} /> : null}
     </div>
   );
 };
