@@ -24,7 +24,9 @@ const PlayersComponent: React.FC<PlayersComponentProps> = ({ teamName }) => {
     <div className='player-container'>
       {players.length
         ? players.map(player => (
-            <Link to={`teams/${teamName}/players/${player.id}`} key={player.id}>
+            <Link
+              to={`/teams/${teamName}/players/${player.id}`}
+              key={player.id}>
               <div key={player.fullName} className='player'>
                 <div className='player-description'>Player name:</div>
                 <div className='player-name'>{player.fullName}</div>
