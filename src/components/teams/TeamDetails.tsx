@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { teamsService } from '../../services/teams.service';
 import { Team } from '../../constants/teamsType';
 
+import './TeamDetails.scss';
 interface RouteParams {
   teamName: string;
 }
@@ -11,7 +12,6 @@ interface TeamDetailsProps extends RouteComponentProps<RouteParams> {}
 
 const TeamDetails: React.FC<TeamDetailsProps> = props => {
   const teamName = props.match.params.teamName;
-
   const [team, setTeam] = useState<Team>();
 
   useEffect(() => {
@@ -20,13 +20,12 @@ const TeamDetails: React.FC<TeamDetailsProps> = props => {
       setTeam(teamResponse.data.team);
     })();
   }, [teamName]);
-  if (team) {
-    console.log(team);
-  }
+
   return (
-    <div>
-      Details about the <span>{teamName}</span>
+    <div className='team-details'>
+      <div className='team-details__name'>{teamName}</div>
       {team?.name}
+      {team?.budget}
     </div>
   );
 };

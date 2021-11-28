@@ -4,3 +4,13 @@ $light-grey: #f8f6f6;
 $light-grey-2: #9f9f9f;
 $light-grey-3: darken($light-grey-2, 15);
 $dark-grey: #798188;
+
+@mixin customBox {
+  width: 80%;
+  margin: 4rem auto;
+  font-size: 1.6rem;
+  border: 1px solid $light-grey-3;
+  border-radius: 15px;
+  min-height: 428px;
+  padding: 1rem 2rem;
+}
